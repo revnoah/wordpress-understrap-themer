@@ -1,0 +1,32 @@
+{
+  "name": "wordpress-understrap-themer",
+  "version": "1.0.0",
+  "description": "WordPress plugin to help download a customized theme",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-zip": "^4.2.0"
+  },
+  "scripts": {
+    "build": "phpcs && gulp",
+    "test": "phpcs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/revnoah/wordpress-understrap-themer.git"
+  },
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "css",
+    "class"
+  ],
+  "author": "Noah J. Stewart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/revnoah/wordpress-understrap-themer/issues"
+  },
+  "homepage": "https://github.com/revnoah/wordpress-understrap-themer#readme"
+}
