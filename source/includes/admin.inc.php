@@ -5,42 +5,42 @@
  *
  * @return array
  */
-function enhanced_body_class_settings_fields() {
+function understrap_themer_settings_fields() {
 	$settings = [
-		'id' => 'enhanced_body_class',
-		'kabob' => 'enhanced-body-class',
-		'label' => __('Enhanced Body Class'),
+		'id' => 'understrap_themer',
+		'kabob' => 'understrap-themer',
+		'label' => __('Understrap Themer'),
 		'settings' => [
 			[
-				'id' => 'enhanced_body_class_add_roles',
+				'id' => 'understrap_themer_add_roles',
 				'label' => __('Add User Role'),
 				'description' => 
 					__('Add a class to the body tag for the current user\'s role'),
 				'type' => 'boolean',
 				'default' => true
 			], [
-				'id' => 'enhanced_body_class_add_user_name',
+				'id' => 'understrap_themer_add_user_name',
 				'label' => __('Add Username'),
 				'description' => 
 					__('Add a class to the body tag for the current user\'s username'),
 				'type' => 'boolean',
 				'default' => false
 			], [
-				'id' => 'enhanced_body_class_add_user_id',
+				'id' => 'understrap_themer_add_user_id',
 				'label' => __('Add User ID'),
 				'description' => 
 					__('Add a class to the body tag for the current user\'s ID'),
 				'type' => 'boolean',
 				'default' => false
 			], [
-				'id' => 'enhanced_body_class_active_frontend',
+				'id' => 'understrap_themer_active_frontend',
 				'label' => __('Active On Frontend'),
 				'description' => 
 					__('Active on the frontend of the website'),
 				'type' => 'boolean',
 				'default' => false
 			], [
-				'id' => 'enhanced_body_class_active_admin',
+				'id' => 'understrap_themer_active_admin',
 				'label' => __('Active On Backend/Admin'),
 				'description' => 
 					__('Active on the backend or admin pages'),
@@ -57,21 +57,21 @@ function enhanced_body_class_settings_fields() {
 /**
  * action admin_menu
  */
-add_action('admin_menu', 'enhanced_body_class_create_menu');
+add_action('admin_menu', 'understrap_themer_create_menu');
 
 /**
  * Create admin menu item
  *
  * @return void
  */
-function enhanced_body_class_create_menu() {
+function understrap_themer_create_menu() {
 	add_submenu_page(
 		'options-general.php',
-		'Enhanced Body Class',
-		'Enhanced Body Class',
+		'Understrap Themer',
+		'Understrap Themer',
 		'administrator',
 		__FILE__,
-		'enhanced_body_class_admin',
+		'understrap_themer_admin',
 		plugins_url('/images/icon.png', __FILE__)
 	);
 }
@@ -79,15 +79,15 @@ function enhanced_body_class_create_menu() {
 /**
  * action admin_init
  */
-add_action('admin_init', 'enhanced_body_class_settings');
+add_action('admin_init', 'understrap_themer_settings');
 
 /**
  * Register custom settings
  *
  * @return void
  */
-function enhanced_body_class_settings() {
-	$settings = enhanced_body_class_settings_fields();
+function understrap_themer_settings() {
+	$settings = understrap_themer_settings_fields();
 
 	//register settings
 	foreach ($settings['settings'] as $setting) {
@@ -105,9 +105,9 @@ function enhanced_body_class_settings() {
  *
  * @return void
  */
-function enhanced_body_class_admin() {
+function understrap_themer_admin() {
 	//load user settings
-	$settings = enhanced_body_class_settings_fields();
+	$settings = understrap_themer_settings_fields();
 	?>
 	<div class="wrap">
 	<h1><?php echo $settings['label']; ?></h1>
@@ -120,7 +120,7 @@ function enhanced_body_class_admin() {
 			<?php
 			foreach ($settings['settings'] as $setting) {
 				$setting['saved'] = get_option($setting['id'], $setting['default']);
-				echo enhanced_body_class_get_formatted_field($setting);
+				echo understrap_themer_get_formatted_field($setting);
 				?>
 			<?php
 			}

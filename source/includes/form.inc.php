@@ -6,13 +6,13 @@
  * @param array $setting Array element from settings
  * @return string
  */
-function enhanced_body_class_get_formatted_field($setting) {
+function understrap_themer_get_formatted_field($setting) {
 	$output = '';
 
 	//get field parts
-	$label = enhanced_body_class_get_label($setting);
-	$description = enhanced_body_class_get_description($setting);
-	$field = enhanced_body_class_get_field($setting);
+	$label = understrap_themer_get_label($setting);
+	$description = understrap_themer_get_description($setting);
+	$field = understrap_themer_get_field($setting);
 
 	//output row
 	$output = '<tr valign="top">';
@@ -49,13 +49,13 @@ function enhanced_body_class_get_formatted_field($setting) {
  * @param array $setting Array element from settings
  * @return string
  */
-function enhanced_body_class_get_field($setting) {
+function understrap_themer_get_field($setting) {
 	$output = '';
 
 	if ($setting['type'] === 'boolean') {
-		$output .= enhanced_body_class_get_checkbox($setting);
+		$output .= understrap_themer_get_checkbox($setting);
 	} elseif ($setting['type'] === 'text') {
-		$output .= enhanced_body_class_get_text($setting);
+		$output .= understrap_themer_get_text($setting);
 	}
 
 	return $output;
@@ -67,7 +67,7 @@ function enhanced_body_class_get_field($setting) {
  * @param array $setting Array element from settings
  * @return string
  */
-function enhanced_body_class_get_label($setting) {
+function understrap_themer_get_label($setting) {
 	$output = '<label for="' . $setting['id'] . '">' 
 		. $setting['label'] . '</label>';
 
@@ -80,7 +80,7 @@ function enhanced_body_class_get_label($setting) {
  * @param array $setting Array element from settings
  * @return string
  */
-function enhanced_body_class_get_description($setting) {
+function understrap_themer_get_description($setting) {
 	if ($setting['description'] != '') {
 		return '<small style="font-weight: 400;">' 
 			. $setting['description'] 
@@ -96,11 +96,11 @@ function enhanced_body_class_get_description($setting) {
  * @param array $setting Array of field settings
  * @return string
  */
-function enhanced_body_class_get_checkbox($setting) {
+function understrap_themer_get_checkbox($setting) {
 	$output = '<input type="checkbox" id="' . $setting['id'] 
 	. '" name="' . $setting['id'] . '" ' 
 	. ($setting['saved'] === 'on' ? 'checked' : '');
-	$output .= _enhanced_body_class_get_data($setting);
+	$output .= _understrap_themer_get_data($setting);
 	$output .= '/>';
 
 	return $output;
@@ -112,11 +112,11 @@ function enhanced_body_class_get_checkbox($setting) {
  * @param array $setting Array of field settings
  * @return string
  */
-function enhanced_body_class_get_text($setting) {
+function understrap_themer_get_text($setting) {
 	$output = '<input type="text" id="' . $setting['id'] 
 		. '" name="' . $setting['id'] 
 		. '" class="form-control"';
-	$output .= _enhanced_body_class_get_data($setting);
+	$output .= _understrap_themer_get_data($setting);
 	$output .= ' value="' . $setting['saved'] 
 		. '" />';
 
@@ -129,7 +129,7 @@ function enhanced_body_class_get_text($setting) {
  * @param array $setting Array of field settings 
  * @return string
  */
-function _enhanced_body_class_get_data($setting) {
+function _understrap_themer_get_data($setting) {
 	if (!isset($setting['data']) || count($setting['data']) === 0) {
 		return '';
 	}
