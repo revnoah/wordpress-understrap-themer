@@ -12,40 +12,11 @@ function understrap_themer_settings_fields() {
 		'label' => __('Understrap Themer'),
 		'settings' => [
 			[
-				'id' => 'understrap_themer_add_roles',
-				'label' => __('Add User Role'),
-				'description' => 
-					__('Add a class to the body tag for the current user\'s role'),
-				'type' => 'boolean',
-				'default' => true
-			], [
-				'id' => 'understrap_themer_add_user_name',
-				'label' => __('Add Username'),
-				'description' => 
-					__('Add a class to the body tag for the current user\'s username'),
-				'type' => 'boolean',
-				'default' => false
-			], [
-				'id' => 'understrap_themer_add_user_id',
-				'label' => __('Add User ID'),
-				'description' => 
-					__('Add a class to the body tag for the current user\'s ID'),
-				'type' => 'boolean',
-				'default' => false
-			], [
-				'id' => 'understrap_themer_active_frontend',
-				'label' => __('Active On Frontend'),
-				'description' => 
-					__('Active on the frontend of the website'),
-				'type' => 'boolean',
-				'default' => false
-			], [
-				'id' => 'understrap_themer_active_admin',
-				'label' => __('Active On Backend/Admin'),
-				'description' => 
-					__('Active on the backend or admin pages'),
-				'type' => 'boolean',
-				'default' => true
+				'id' => 'understrap_themer_source_zip',
+				'label' => __('Theme Zip File'),
+				'description' => __('Url to zip file that contains WordPress theme'),
+				'type' => 'text',
+				'default' => 'https://github.com/revnoah/overunderstrap/archive/master.zip'
 			]
 		]
 	];

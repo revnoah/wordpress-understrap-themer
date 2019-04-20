@@ -100,7 +100,7 @@ function understrap_themer_get_checkbox($setting) {
 	$output = '<input type="checkbox" id="' . $setting['id'] 
 	. '" name="' . $setting['id'] . '" ' 
 	. ($setting['saved'] === 'on' ? 'checked' : '');
-	$output .= _understrap_themer_get_data($setting);
+	$output .= understrap_themer_get_data($setting);
 	$output .= '/>';
 
 	return $output;
@@ -116,7 +116,7 @@ function understrap_themer_get_text($setting) {
 	$output = '<input type="text" id="' . $setting['id'] 
 		. '" name="' . $setting['id'] 
 		. '" class="form-control"';
-	$output .= _understrap_themer_get_data($setting);
+	$output .= understrap_themer_get_data($setting);
 	$output .= ' value="' . $setting['saved'] 
 		. '" />';
 
@@ -129,7 +129,7 @@ function understrap_themer_get_text($setting) {
  * @param array $setting Array of field settings 
  * @return string
  */
-function _understrap_themer_get_data($setting) {
+function understrap_themer_get_data($setting) {
 	if (!isset($setting['data']) || count($setting['data']) === 0) {
 		return '';
 	}
